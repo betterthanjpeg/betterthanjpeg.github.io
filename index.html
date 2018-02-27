@@ -1,0 +1,163 @@
+<!--===================================================
+	Title: magellan_v4.html
+	Author: Tiffany thuang13@stanford.edu
+	Last Modified: 2/25/2018
+=====================================================-->
+<!-- Notes:
+	My goal is to stop getting confused over what bootstrap's complicated carousel can and cannot do, and to do this by building my own very simple carouself from the following tutorial: http://qnimate.com/creating-a-slider-using-html-and-css-only/
+	
+	Okay that tutorial didn't work. It takes advantage of left and right specifications, which I think aren't responsive. 
+	
+	So some documentation says that bootstrap's carousel resizes images when window is resized. Therfore, adding a window resize trigger will cause image maps to work properly in bootstrap carousel.
+	
+	Okay, I added the functionality for image resizing by adding a plugin but can't get it to work properly. So, maybe it has somehting to do with the fact that the carousel doesn't work properly anyways. It shows the image twice, the first time through the carousel. I'm going to fix this first and get rid of everything not necessary to the simulation. Okay, that might have been because I had two active images.
+	
+	Yay, finally got the image mapping to work!!!! Trick is to have the script at the bottom, and also, for some reason to have the map defined below the image with map referenced as "#map". Also, seems the best way to get image resizing to work, is to specify img widths and heights as 100% and place inside a container with specified pixel widths and heights.
+	
+	Gah, it seems like I actually don't want to use bootstrap carousel. I don't want the autoplay, the animations, the little icons that come with carousel. I just need the pictures to be centered every time they display and also, the carousel loads multiple images into one page. That's it..... Maybe I can just do it with bootstrap.  Okay, I'm updating this to version 4.
+	
+	Actually, the other page uses php to create their fast implementation of this animation. Let me spend 10 min learning php to see if it's worth learning. Hm seems like it's not worht learning. Php is recommended for server side stuff and data manipulation, which we don't need.
+	
+	Okay, I think the best way is to learn how to make a very simple carousel. Hmm, this guy here (https://pepsized.com/how-to-create-a-responsive-css-only-slider/) did it by stitching all images together in a row, putting them in the background and adjusting the background position. Ingenious. Although it makes it difficult to add images.
+	
+	Well, before I decide on the best mechanism, I'm just going to map out where the buttons are for each image. 
+		Total size: 1024 x 1280
+		Vent: 1168, 102, 98, 36
+		Vent/LinkZtoWD message Yes: 616, 586, 102, 24 
+		Pump: 1036, 102, 98, 28
+		Beam On: 1036, 178, 76, 26im
+		
+		Move stage up: 514, 602, 502, 248
+	
+		Select NavCam window: 0, 552, 512, 472
+		Select Ebeam window: 0, 76, 514, 476
+		
+		Top menu stage: 270, 26, 54, 26
+		Move stage to Nav-Cam: 272,488,360,20
+		Take Nav-Cam photo: 272, 508, 360, 24
+		
+		LinkZtoWD: 336, 48, 44, 32
+		
+		AutoUModeCenter tab: 1152, 52, 36, 30
+		AutoUModeCenter: 1034, 112, 224, 20
+		
+		Stage Postion tab: 1060,48,32,38
+		Sample Loading: 1040, 390, 126, 22
+		
+	1:30 pm: Okay, I'm going to go back and try to build my own carousel using the source https://christianheilmann.com/2015/04/08/keeping-it-simple-coding-a-carousel/
+	2:13 pm: yay! I got the tutorial to work. Booo  the image mapping has stopped working again..... This might be because the buttons displace the position of he image within the container. I'll try to move the buttons to the bottom instead. Moved the buttons to the top left for the meantime. Found out image mapping area still works from 'inspect', but can't seem to figure out why the entire area is not clickable.
+	
+	2:30 pm from looking at question on stackoverflow, seems like I can use the idea of javascript to make certain images visible and not visible, but can just get rid of the ol so I can take advantage of image mapping. Hoping to get this working by 3:30 pm. I'm updating to v5.
+	
+	5:30 pm Had dinner and actually learned javascript at CodeAcademy. Okay, new plan. I'm going to try to declare different classes, and set active classes and show or hide siblings in javascript. Seems like a simple javascript project. Can probably scrap everything else in the carousel.
+	
+	So, there's some kind of problem at the moment, where the subsequent images are obstructing the map of the first image. 
+	
+	8:00 pm So I'm just going to do this the fastest way and create multiple webpages. Moving to v6 with fresh new folder even though nothing has been done in v5.
+	
+	So I came back to editing v5 to get the java version to work (the multiple webpage onei s annoying because you can see each image load as the webpage loads...). and I found out that the z-index for the active element wasn't high enough!! So the other list items were on top of the active element, but hidden, which is why the image mapping wasn't working. Now, I"m going to add in other images and thir maps, to make sure it works in properly.
+	
+	Well, couldn't get maps to work for some reason after the first image. I'll just do it with positioned anchors. With this link !!!(https://www.zaneray.com/responsive-image-map/)!!!. All that time spent getting positions from images wasted.. Ah well. I think it was only about 1.5 hr wasted. 
+	
+	2/26 1:00 pm It still works after adding 5 items to the list. Yayyyyy!!!! I finally know the architecture of my site!!
+	
+	Okay: project schedule: I want to get everything presentable to Angela by next Wednesday. So that means if I want equipment, I should borrow it by Friday. And I need to have all my pages in order by Wednesday. So let me spend today to organize and upload all the pages I currently ahve. 
+	
+	I'm updating this to v7 and putting in new folder. Note: the image can't be in tif file. --All except the very first one are okay.
+	Image organization
+		-need video for sample load
+		-need new image for pump (with Pump not already depressed)
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Magellan simulation</title>
+	
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
+	<!-- Bootstrap core CSS-->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- Custom styles for this template -->
+	<link href="css/magellan_v7.css" rel="stylesheet">
+</head>
+  
+
+<body>
+
+	<div class="simbox">
+		<ol class="content"> <!-- Ordered list -->
+			<li>
+				<img src="magimgs/Step1 Vent.png" alt="Vent" class="img-responsive">
+				<a href="javascript:navigate(1)" title="Vent" style="position: absolute; left: 91.77%; top: 10.7%; width: 7.21%; height: 2.72%; z-index: 2;"></a>
+			</li>
+			<li>
+				<img src="magimgs/Step1.2 Vent.png" alt="Yes" class="img-responsive">
+				<a href="javascript:navigate(1)" title="Yes" style="position: absolute; left: 48.2%; top: 57.1%; width: 8.15%; height: 2.72%; z-index: 2;"></a>
+			</li>
+			<li>
+				<img src=none alt="Sample Load" class="img-responsive">
+				<a href="javascript:navigate(1)" title="SampleLoad" style="position: absolute; left: 48.2%; top: 57.1%; width: 8.15%; height: 2.72%; z-index: 2;"></a>
+			</li>
+			<li>
+				<img src="magimgs/Step2.2 Pump.png" alt="Pump" class="img-responsive">
+				<a href="javascript:navigate(1)" title="Pump" style="position: absolute; left: 81.19%; top: 10.8%; width: 8.15%; height: 2.72%; z-index: 2;"></a>
+			</li>
+			<li>
+				<img src=none alt="NavCam" class="img-responsive">
+				<a href="javascript:navigate(1)" title="NavCam" style="position: absolute; left: 48.2%; top: 57.1%; width: 8.15%; height: 2.72%; z-index: 2;"></a>
+			</li>
+			<li>
+				<img src=none alt="PlasmaClean" class="img-responsive">
+				<a href="javascript:navigate(1)" title="PlasmaClean" style="position: absolute; left: 48.2%; top: 57.1%; width: 8.15%; height: 2.72%; z-index: 2;"></a>
+			</li>
+			<li>
+				<img src="Step5 Sample height.png" alt="SampleHeight" class="img-responsive">
+				<a href="javascript:navigate(1)" title="SampleHeight" style="position: absolute; left: 48.2%; top: 57.1%; width: 8.15%; height: 2.72%; z-index: 2;"></a>
+			</li>
+			<li>
+				<img src="Step5.1 Sample height.png" alt="SampleHeight" class="img-responsive">
+				<a href="javascript:navigate(1)" title="SampleHeight" style="position: absolute; left: 48.2%; top: 57.1%; width: 8.15%; height: 2.72%; z-index: 2;"></a>
+			</li>
+			<li>
+				<img src="Step5.2 Sample height.png" alt="SampleHeight" class="img-responsive">
+				<a href="javascript:navigate(1)" title="SampleHeight" style="position: absolute; left: 48.2%; top: 57.1%; width: 8.15%; height: 2.72%; z-index: 2;"></a>
+			</li>
+			<li>
+				<img src="magimgs/Step7 TurnOnBeam.png" alt="magellan" class="img-responsive">
+				<a href="javascript:navigate(1)" title="Beam On" style="position: absolute; left: 81.5%; top: 17.7%; width: 5.56%; height: 2.72%; z-index: 2;"></a>
+			</li>
+			<li>
+				<img src="magimgs/Step7.1 TurnOnBeam.png" alt="magellan" class="img-responsive">
+				<a href="javascript:navigate(1)" title="LinkZ" style="position: absolute; left: 26.8%; top: 5.35%; width: 2.66%; height: 2.72%; z-index: 2;"></a>
+			</li>
+			<li>
+				<img src="magimgs/Step6.4 LinkZ.png" alt="magellan" class="img-responsive">
+				<a href="javascript:navigate(1)" title="Yes" style="position: absolute; left: 48.2%; top: 57.1%; width: 8.15%; height: 2.72%; z-index: 2;"></a>
+			</li>
+		</ol>
+	</div>
+</body><!--/.body -->
+
+	
+<!-- ============ Bootstrap core JavaScript ============ -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+<script src="http://getbootstrap.com/assets/js/docs.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+<script src="js/imageMapResizer.min.js"></script>
+
+
+<!-- this script should make image mapping work when the windows are different sizes -->
+<script type="text/javascript">
+	$('map').imageMapResize();
+</script>
+<script src="js/magellan_v7.js"></script>
+
+</html>
