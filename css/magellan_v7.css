@@ -8,6 +8,9 @@
 html,body {
   font-family: 'Garamond', Helvetica, sans-serif;
   position: absolute;
+  width: 870px;
+  height: 680px;
+  border: 2px solid black;
 }
 
 
@@ -17,7 +20,7 @@ html,body {
   position: relative;
   margin: 12px;
   margin-left: 200px;
-  padding-top: 0px;
+  padding-top: 20px;
   box-shadow: 2px 2px 10px #ccc;
   overflow: hidden;
 }
@@ -38,13 +41,13 @@ html,body {
 	position: absolute;
 	margin: -15px;
 	padding: 0;
-	font-size: 11px;
+	font-size: 12px;
 	background-color: white;
 	color: black;
 	width: 100%;
 	height: 10px;
 	z-index: 100;
-	display: none; /* decide later if i want to use this */
+	display: block;; /* decide later if i want to use this */
 }
 
 
@@ -84,7 +87,12 @@ html,body {
   margin: auto;
 }
 
-/* NAVBAR */
+/* ======NAVBAR====== */
+.navbar h3{
+	color: white;
+	margin-left: 2px;
+}
+
 /* Special class on .container surrounding .navbar, used for positioning it into place. */
 .navbar-wrapper {
   position: absolute;
@@ -100,7 +108,7 @@ html,body {
 }
 
 .navbar-fixed-left {
-  width: 160px;
+  width: 180px;
   position: fixed;
   border-radius: 0;
   height: 100%;
@@ -108,12 +116,13 @@ html,body {
 
 .navbar-fixed-left .navbar-nav > li {
   float: none;  /* Cancel default li float: left */
-  width: 139px;
-  ma
+  width: 170px;
+  margin-top: -15px;
+  margin-bottom: -20px;
 }
 
 .navbar-fixed-left + .container {
-  padding-left: 160px;
+  padding-left: 180px;
 }
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus {
 	background-color: inherit;
@@ -123,16 +132,42 @@ html,body {
 .navbar {min-height:32px !important}
 */
 
-/* CONTROLS */
-.controls .buttons img{
+/* CONTROLS */ 
+.controls {
+	position: relative;
+	height: 120;
+	margin-left: 180px;
+	display: block;
+}
+.controls img{
 	width: 300px;
+	height: auto;
 	margin-left: 200px;
 }
 .controls a{
 	border: none;
+	height: 120px;
 	z-index: 100;
+	position: relative;
 }
 .controls a:hover {
 	border: 2px solid red;
+	height: 120px;
 	z-index: 100;
+}
+
+/* MISC */
+.congrats {
+	width: 635px;
+	height: 508px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.congrats h4 {
+	position: relative;
+	float: left;
+	left: 30%;
+	top: 40%;
+	color: black;
 }

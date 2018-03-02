@@ -36,24 +36,48 @@ const navigate = (navidx) => {
 			$(".nav").find(".active").removeClass("active");
 			$(".n1").addClass("active"); 
 			break;
-		case 5: 
+		case 2: 
 			$(".nav").find(".active").removeClass("active");
 			$(".n2").addClass("active"); 
 			break;
-		case 10: 
+		case 4: 
 			$(".nav").find(".active").removeClass("active");
 			$(".n3").addClass("active"); 
 			break;
-		case 14: 
+		case 5: 
 			$(".nav").find(".active").removeClass("active");
 			$(".n4").addClass("active"); 
 			break;
-		case 15: 
-			$(".controls").show();
-		case 17: 
+		case 11: 
 			$(".nav").find(".active").removeClass("active");
-			$(".n5").addClass("active"); 
+			$(".n7").addClass("active"); 
 			break;
+		case 13: 
+			$(".nav").find(".active").removeClass("active");
+			$(".n9").addClass("active"); 
+			break;
+		case 15:
+			$(".controls").show();
+			$(".controls a").show();
+			$(".nav").find(".active").removeClass("active");
+			$(".n10").addClass("active"); 
+			break;
+		case 19: 
+			$(".nav").find(".active").removeClass("active");
+			$(".n11").addClass("active"); 
+			break;
+		case 21:
+			$(".controls").show();
+			$(".controls a").show();
+		case 25: 
+			$(".nav").find(".active").removeClass("active");
+			$(".n12").addClass("active"); 
+			break;
+		case 26: 
+			$(".nav").find(".active").removeClass("active");
+			$(".n13").addClass("active"); 
+			break;
+
 		default:
 	}
     // set new current element 
