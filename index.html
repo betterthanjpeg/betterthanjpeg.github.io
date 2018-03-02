@@ -7,14 +7,17 @@
 	Removed all notes
 	
 	TODO:
-	
 	-Fill in the rest of the data
+		-make navbar same as magellan startup checklist
 	-Image organization
+		-Vent: 
+			-need screenshot for sample loading position
 		-Sample load:
 			-need video for sample load
 			-need new image for pump (with Pump not already depressed)
 		-NavCam:
 			-take NavCam photo animation
+		-Get Lower  stage image
 		-Adjust height:
 			-Switch to stage position tabindex
 			-Select currect window
@@ -46,15 +49,23 @@
 
 <body>
 	<!-- ============ NAVIGATION BAR ============== -->
-	<nav class="navbar navbar-default navbar-fixed-top navbar-custom">
-	  <div class="container">
+	<nav class="navbar navbar-inverse navbar-fixed-left">
+	  <div class="navbar-wrapper">
 		<div id="navbar" class="collapse navbar-collapse">
+		  <h3> Magellan </h3>
 		  <ul class="nav navbar-nav">
-			<li class="n1 active"><a href="javascript:navigate(0)">Load your sample</a></li>
-			<li class="n2"><a href="javascript:navigate(5)">Take a NavCam Image</a></li>
-			<li class="n3"><a href="javascript:navigate(10)">Adjust sample height</a></li>
-			<li class="n4"><a href="javascript:navigate(14)">Link Z</a></li>
-			<li class="n5"><a href="javascript:navigate(17)">Shutdown</a></li>
+			<li class="n1 active"><a href="javascript:navigate(0)">Vent Chamber</a></li>
+			<li class="n2"><a href="javascript:navigate(2)">Load Sample</a></li>
+			<li class="n3"><a href="javascript:navigate(4)">Close Door; Pump Down</a></li>
+			<li class="n4"><a href="javascript:navigate(5)">Take a Nav Cam Image (optional)</a></li>
+			<li class="n5"><a href="javascript:navigate(11)">Rum Sample Cleaning (optional)</a></li>
+			<li class="n6"><a href="javascript:navigate(11)">Lower Stage</a></li>
+			<li class="n7"><a href="javascript:navigate(11)">Move Sample to Imaging Position</a></li>
+			<li class="n9"><a href="javascript:navigate(13)">Turn Beam On; Start Imaging</a></li>
+			<li class="n10"><a href="javascript:navigate(15)">Verify Sample Height, Link, Shift to 4mm</a></li>
+			<li class="n11"><a href="javascript:navigate(19)">Rum AutoUModeSource Centering</a></li>
+			<li class="n12"><a href="javascript:navigate(21)">Proceed with Imaging</a></li>
+			<li class="n13"><a href="javascript:navigate(26)">Shutdown</a></li>
 		  </ul>
 		</div><!--/.nav-collapse -->
 	  </div>
@@ -66,22 +77,23 @@
 		<ol class="content"> <!-- Ordered list -->
 			<!-- Sample loading process -->
 			<li>
-				<h6> Vent the chamber </h6>
+				<h6>Vent the chamber. Check that stage is at Sample Loading position (X=80, Y=0). Only use the pull-bar to move the door. </h6>
 				<img src="magimgs/Step1 Vent.png" alt="Vent" class="img-responsive">
 				<a href="javascript:navigate(-1)" title="Vent" style="position: absolute; left: 91.77%; top: 10.7%; width: 7.21%; height: 2.6%; z-index: 2;"></a>
 			</li>
 			<li>
-				<h6> Vent the chamber </h6>
+				<h6>Click yes in the dialog box.</h6>
 				<img src="magimgs/Step1.2 Vent.png" alt="Yes" class="img-responsive">
 				<a href="javascript:navigate(-1)" title="Yes" style="position: absolute; left: 48.2%; top: 57.1%; width: 7.8%; height: 2.72%; z-index: 2;"></a>
 			</li>
+			<!-- Sample loading position -->
 			<li>
-				<h6> Load your sample </h6>
+				<h6>Only use the pull-bar to move the door. Load the sample.</h6>
 				<img src="magimgs/Step1.3 Vent.png" alt="Sample Load" class="img-responsive">
 				<a href="javascript:navigate(-1)" title="SampleLoad" style="position: absolute; left: 5.86%; top: 9.08%; width: 85.16%; height: 84.57%; z-index: 2;"></a>
 			</li>
 			<li>
-				<h6> Pump down the chamber </h6>
+				<h6>Only use the pull-bar to move the door. Load the sample.</h6>
 				<a href="javascript:navigate(-1)" title="SampleLoad">
 					<video width=635px height=528px autoplay>
 					  <source src="magimgs/static1.mp4" type="video/mp4">
@@ -90,30 +102,30 @@
 				</a>
 			</li>
 			<li>
-				<h6> Load your sample </h6>
+				<h6>Only use the pull-bar to move the door. Pump down the chamber </h6>
 				<img src="magimgs/Step2.2 Pump.png" alt="Pump" class="img-responsive">
 				<a href="javascript:navigate(5)" title="Pump" style="position: absolute; left: 81.19%; top: 10.8%; width: 7%; height: 2.6%; z-index: 2;"></a>
 			</li>
 			<li>
-				<h6> Take a NavCam image </h6>
+				<h6>Open the stage menu</h6>
 				<img src="magimgs/Step2.2 Pump.png" alt="NavCam" class="img-responsive">
 				<a href="javascript:navigate(-1)" title="Stage menu" style="position: absolute; left: 20.94%; top: 2.44%; width: 4.69%; height: 2.44%; z-index: 2;"></a>
 			</li>
 			<!-- Nav-Cam process -->
 			<li>
-				<h6> Take a NavCam image </h6>
+				<h6>Select "Move stage to "Nav-Cam" to move the stage to the nav-cam position</h6>
 				<img src="magimgs/Step3 NavCam.png" alt="NavCam" class="img-responsive">
 				<a href="javascript:navigate(-1)" title="Stage menu: move to Nav-Cam" style="position: absolute; left: 20.94%; top: 47.17%; width: 28.28%; height: 2.93%; z-index: 2;"></a>
 			</li>
 			<li>
-				<h6> Take a NavCam image </h6>
+				<h6>Open the stage menu</h6>
 				<img src="magimgs/Step3.2 NavCam.png" alt="NavCam" class="img-responsive">
 				<div class="hover">
 				<a href="javascript:navigate(-1)" title="Stage menu" style="position: absolute; left: 20.94%; top: 2.44%; width: 4.69%; height: 2.44%; z-index: 2;"></a>
 				
 			</li>
 			<li>
-				<h6> Take a NavCam image </h6>
+				<h6>Select "Take Nav-Cam Photo" to take the image</h6>
 				<img src="magimgs/Step3.5 NavCam.png" alt="NavCam" class="img-responsive">
 				<a href="javascript:navigate(-1)" title="Stage menu: take Nav-Cam image" style="position: absolute; left: 21.09%; top: 49.51%; width: 28.28%; height: 2.93%; z-index: 2;"></a>
 			</li>
@@ -127,73 +139,137 @@
 				</a>
 			</li>
 			<li>
-				<h6> Take a NavCam image </h6>
+				<h6>Select the position tab</h6>
 				<img src="magimgs/Step3.8 NavCam.png" alt="NavCam wait" class="img-responsive">
 				<a href="javascript:navigate(11)" title="PositionTab" style="position: absolute; left: 82.5%; top: 4.88%; width: 2.81%; height: 3.42%; z-index: 2;"></a>
 			</li>
-			<!-- Plasma clean process -->
-			<!-- Adjust sample height -->
+			<!--11 Plasma clean process -->
+			<!--12Adjust sample height/ Cant add alternate path here -->
 			<li>
-				<h6> Adjust sample height </h6>
+				<h6>Center stage (or center on feature of interest)</h6>
 				<img src="magimgs/Step5 Sample height.png" alt="SampleHeight" class="img-responsive">
 				<a href="javascript:navigate(-1)" title="PositionTab" style="position: absolute; left: 86.4%; top: 16.5%; width: 6.48%; height: 2.25%; z-index: 2;"></a>
 			</li>
 			<li>
-				<h6> Adjust sample height </h6>
+				<h6>Raise stage to 4mm</h6>
 				<img src="magimgs/Step5.1 Sample height.png" alt="SampleHeight" class="img-responsive">
 				<a href="javascript:navigate(-1)" title="quad3" style="position: absolute; left: 40%; top: 53.91%; width: 40.08%; height: 46%; z-index: 2;"></a>
 			</li>
 			<li>
-				<h6> Adjust sample height </h6>
+				<h6>Select the stage tab ?? </h6>
 				<img src="magimgs/Step5.2 Sample height.png" alt="SampleHeight" class="img-responsive">
-				<a href="javascript:navigate(14)" title="quad3" style="position: absolute; left: 80.39%; top: 5.08%; width: 2.19%; height: 2.83%; z-index: 2;"></a>
+				<a href="javascript:navigate(14)" title="Stage Tab ??" style="position: absolute; left: 80.39%; top: 5.08%; width: 2.19%; height: 2.83%; z-index: 2;"></a>
 			</li>
 			<li>
-				<h6> Turn on beam </h6>
+				<h6> At proper vacuum level. Turn on beam. (Check source centering and re-center crossover if necessary.)</h6>
 				<img src="magimgs/Step7 TurnOnBeam.png" alt="magellan" class="img-responsive">
 				<a href="javascript:navigate(-1)" title="Beam On" style="position: absolute; left: 81.5%; top: 17.7%; width: 5.56%; height: 2.72%; z-index: 2;"></a>
 			</li>
 			<li>
-				<h6> Link Z to WD </h6>
+				<h6>Focus at 5000X to 8000X</h6>
 				<img src="magimgs/Step7.1 TurnOnBeam.png" alt="magellan" class="img-responsive">
 			<!-- Focus and Stigmate -->
 			<li>
-				<h6> Link Z to WD </h6>
+				<h6>Click LinkZtoWD icon</h6>
 				<img src="magimgs/Step6.5 LinkZ.png" alt="magellan" class="img-responsive">
 				<a href="javascript:navigate(-1)" title="LinkZ" style="position: absolute; left: 26.8%; top: 5.35%; width: 2.66%; height: 2.72%; z-index: 2;"></a>
 			</li>
 			<li>
-				<h6> Link Z to WD </h6>
+				<h6>Select 'Yes' in dialogue box</h6>
 				<img src="magimgs/Step6.4 LinkZ.png" alt="magellan" class="img-responsive">
 				<a href="javascript:navigate(-1)" title="Yes" style="position: absolute; left: 51.87%; top: 56.74%; width: 6.48%; height: 2.4%; z-index: 2;"></a>
 			</li>
 			<li>
-				<h6> Link Z to WD </h6>
+				<h6>Shift sample height to 4mm</h6>
 				<img src="magimgs/Step6.7 LinkZ.png" alt="magellan" class="img-responsive">
+				<a href="javascript:navigate(-1)" title="Yes" style="position: absolute; left: 86.48%; top: 21.97%; width: 5.94%; height: 2.1%; z-index: 2;"></a>
+			</li>
+			<li>
+				<h6>Select right-most tab </h6>
+				<img src="magimgs/Step6.7 LinkZ.png" alt="magellan" class="img-responsive">
+				<a href="javascript:navigate(-1)" title="Yes" style="position: absolute; left: 90%; top: 5.27%; width: 2.19%; height: 3.03%; z-index: 2;"></a>
+			</li>
+			<li>
+				<h6>Select AutoUMode Centering to begin centering procedure </h6>
+				<img src="magimgs/Step8 AutoUMode Source Centering.png" alt="magellan" class="img-responsive">
+				<a href="javascript:navigate(-1)" title="Yes" style="position: absolute; left: 81.09%; top: 10.45%; width: 17.66%; height: 3.03%; z-index: 2;"></a>
+			</li>
+			<li>
+				<h6>Re-link height: Focus at 5000X to 8000X</h6>
+				<img src="magimgs/Step7.1 TurnOnBeam.png" alt="magellan" class="img-responsive">
+			<!-- Focus and Stigmate -->
+			<li>
+				<h6>Click LinkZtoWD icon</h6>
+				<img src="magimgs/Step6.5 LinkZ.png" alt="magellan" class="img-responsive">
+				<a href="javascript:navigate(-1)" title="LinkZ" style="position: absolute; left: 26.8%; top: 5.35%; width: 2.66%; height: 2.72%; z-index: 2;"></a>
+			</li>
+			<li>
+				<h6>Select 'Yes' in dialogue box</h6>
+				<img src="magimgs/Step6.4 LinkZ.png" alt="magellan" class="img-responsive">
 				<a href="javascript:navigate(-1)" title="Yes" style="position: absolute; left: 51.87%; top: 56.74%; width: 6.48%; height: 2.4%; z-index: 2;"></a>
 			</li>
 			<li>
-				<h6> AutoUMode Centering </h6>
+				<h6>Shift sample height to 4mm</h6>
+				<img src="magimgs/Step6.7 LinkZ.png" alt="magellan" class="img-responsive">
+				<a href="javascript:navigate(-1)" title="Yes" style="position: absolute; left: 86.48%; top: 21.97%; width: 5.94%; height: 2.1%; z-index: 2;"></a>
+			</li>
+			<li>
+				<h6>Re-check "Auto" for UC mode</h6>
 				<img src="magimgs/Step8 AutoUMode Source Centering.png" alt="magellan" class="img-responsive">
-				<a href="javascript:navigate(-1)" title="Yes" style="position: absolute; left: 51.87%; top: 56.74%; width: 6.48%; height: 2.4%; z-index: 2;"></a>
+				<a href="javascript:navigate(-1)" title="quad3" style="position: absolute; left: 39.84%; top: 54%; width: 40.31%; height: 43.07%; z-index: 2;"></a>
 			</li>
 			<!-- Imaging -->
 			<!-- Shutdown -->
 			<li>
-				<h6> Shutdown </h6>
+				<h6>Turn the beam off</h6>
 				<img src="magimgs/Step10 Shutdown.png" alt="magellan" class="img-responsive">
-				<a href="javascript:navigate(-1)" title="Yes" style="position: absolute; left: 48.2%; top: 57.1%; width: 8.15%; height: 2.72%; z-index: 2;"></a>
+				<a href="javascript:navigate(-1)" title="Beam Off" style="position: absolute; left: 81.5%; top: 17.7%; width: 5.56%; height: 2.72%; z-index: 2;"></a>
+			<li>
+				<h6>Vent the chamber. Check that stage is at Sample Loading position (X=80, Y=0). Only use the pull-bar to move the door. </h6>
+				<img src="magimgs/Step1 Vent.png" alt="Vent" class="img-responsive">
+				<a href="javascript:navigate(-1)" title="Vent" style="position: absolute; left: 91.77%; top: 10.7%; width: 7.21%; height: 2.6%; z-index: 2;"></a>
+			</li>
+			<li>
+				<h6>Click yes in the dialog box.</h6>
+				<img src="magimgs/Step1.2 Vent.png" alt="Yes" class="img-responsive">
+				<a href="javascript:navigate(-1)" title="Yes" style="position: absolute; left: 48.2%; top: 57.1%; width: 7.8%; height: 2.72%; z-index: 2;"></a>
+			</li>
+			<!-- Sample loading position -->
+			<li>
+				<h6>Only use the pull-bar to move the door. Unload the sample.</h6>
+				<img src="magimgs/Step1.3 Vent.png" alt="Sample Unload" class="img-responsive">
+				<a href="javascript:navigate(-1)" title="SampleLoad" style="position: absolute; left: 5.86%; top: 9.08%; width: 85.16%; height: 84.57%; z-index: 2;"></a>
+			</li>
+			<li>
+				<h6>Only use the pull-bar to move the door. Unload the sample.</h6>
+				<a href="javascript:navigate(-1)" title="Sample Unload">
+					<video width=635px height=528px autoplay>
+					  <source src="magimgs/static1.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</a>
+			</li>
+			<li>
+				<h6>Only use the pull-bar to move the door. Pump down the chamber </h6>
+				<img src="magimgs/Step2.2 Pump.png" alt="Pump" class="img-responsive">
+				<a href="javascript:navigate(-1)" title="Pump" style="position: absolute; left: 81.19%; top: 10.8%; width: 7%; height: 2.6%; z-index: 2;"></a>
+			</li>
+			<li>
+				
+					<div class="congrats">
+						<a href="javascript:navigate(-1)" title="Pump" style="position: absolute; left: 5%; top: 5%; width: 80%; height: 80%; z-index: 2;">
+							<h4>You've completed the simulation!</h4>
+						</a>
+					</div>
 			</li>
 		</ol>
 	</div>
-</body><!--/.body -->
 	<!-- ============ CONTROLS ============== -->
-	<div class="controls">
-		<div class="buttons">
-			<img src="magimgs/magellansim2.png" alt="Vent">
-			<a href="javascript:navigate(-1)" title="Vent" style="position: absolute; left: 30%; top: 75%; width: 27%; height: 12%; z-index: 2;"></a>
-		</div>
+	<div class="controls" id="controls">
+		<a href="javascript:navigate(-1)" title="Controls" style="position: absolute; left: 0%; top: 0%; width: 100%; height: 100%; z-index: 2;"><img src="magimgs/magellansim2.png" alt="Controls"></a>
 	</div>
+</body><!--/.body -->
+
 	
 <!-- ============ Bootstrap core JavaScript ============ -->
 <!-- Placed at the end of the document so the pages load faster -->
