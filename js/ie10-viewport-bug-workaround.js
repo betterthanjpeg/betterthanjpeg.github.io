@@ -20,3 +20,4 @@
     )
     document.head.appendChild(msViewportStyle)
   }
+}())
