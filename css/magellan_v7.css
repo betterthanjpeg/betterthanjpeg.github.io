@@ -13,10 +13,9 @@ html,body {
   border: 2px solid black;
 }
 
-
 .simbox {
   width: 635px;
-  height: 508px;
+  height: 528px;
   position: relative;
   margin: 12px;
   margin-left: 200px;
@@ -92,6 +91,11 @@ html,body {
 	color: white;
 	margin-left: 2px;
 }
+.navbar h4{
+	color: grey;
+	margin-left: 2px;
+	margin-top: 200px;
+}
 
 /* Special class on .container surrounding .navbar, used for positioning it into place. */
 .navbar-wrapper {
@@ -111,7 +115,7 @@ html,body {
   width: 180px;
   position: fixed;
   border-radius: 0;
-  height: 100%;
+  height: 680px;
 }
 
 .navbar-fixed-left .navbar-nav > li {
@@ -132,7 +136,7 @@ html,body {
 .navbar {min-height:32px !important}
 */
 
-/* CONTROLS */ 
+/* ============= CONTROLS =============== */ 
 .controls {
 	position: relative;
 	height: 120;
@@ -146,17 +150,15 @@ html,body {
 }
 .controls a{
 	border: none;
+	display: block;
 	height: 120px;
 	z-index: 100;
-	position: relative;
 }
 .controls a:hover {
 	border: 2px solid red;
-	height: 120px;
-	z-index: 100;
 }
 
-/* MISC */
+/* ================ MISC ================== */
 .congrats {
 	width: 635px;
 	height: 508px;

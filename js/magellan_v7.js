@@ -1,3 +1,58 @@
+// Balloon //
+/*
+
+var Balloon = function() {
+    this.mass = 1;
+    this.height = 100;
+    this.width = 70;
+    this.position = new PVector(width/2, height-this.height/2-10);
+    this.velocity = new PVector(0, 0);
+    this.acceleration = new PVector(0, 0);
+};
+  
+Balloon.prototype.applyForce = function(force) {
+    var f = PVector.div(force, this.mass);
+    this.acceleration.add(f);
+};
+  
+Balloon.prototype.update = function() {
+    this.velocity.add(this.acceleration);
+    this.position.add(this.velocity);
+    this.acceleration.mult(0);
+};
+
+Balloon.prototype.display = function() {
+    stroke(0);
+    strokeWeight(2);
+    fill(255, 0, 0);
+    line(this.position.x, this.position.y, this.position.x, this.position.y + this.height*2);
+    ellipse(this.position.x, this.position.y, this.width, this.height);
+};
+
+Balloon.prototype.checkEdges = function() {
+    if (this.position.y < this.height/2)
+    {
+        this.velocity.y *= -1;
+    }
+};
+
+
+var m = new Balloon(); 
+
+var draw = function() {
+    background(224, 224, 224);
+    
+    var balloon = new PVector(0, -0.01);
+    m.applyForce(balloon);
+
+    m.update();
+    m.display();
+    m.checkEdges();
+};
+
+*/
+
+
 // Read necessary elements from the DOM once
 var box = document.querySelector('.simbox');
 var navbox = document.querySelector('#navbar');
@@ -36,44 +91,44 @@ const navigate = (navidx) => {
 			$(".nav").find(".active").removeClass("active");
 			$(".n1").addClass("active"); 
 			break;
-		case 2: 
+		case 4: 
 			$(".nav").find(".active").removeClass("active");
 			$(".n2").addClass("active"); 
 			break;
-		case 4: 
+		case 6: 
 			$(".nav").find(".active").removeClass("active");
 			$(".n3").addClass("active"); 
 			break;
-		case 5: 
+		case 7: 
 			$(".nav").find(".active").removeClass("active");
 			$(".n4").addClass("active"); 
 			break;
-		case 11: 
+		case 13: 
 			$(".nav").find(".active").removeClass("active");
 			$(".n7").addClass("active"); 
 			break;
-		case 13: 
+		case 15: 
 			$(".nav").find(".active").removeClass("active");
 			$(".n9").addClass("active"); 
 			break;
-		case 15:
+		case 17:
 			$(".controls").show();
 			$(".controls a").show();
 			$(".nav").find(".active").removeClass("active");
 			$(".n10").addClass("active"); 
 			break;
-		case 19: 
+		case 21: 
 			$(".nav").find(".active").removeClass("active");
 			$(".n11").addClass("active"); 
 			break;
-		case 21:
+		case 25:
 			$(".controls").show();
 			$(".controls a").show();
-		case 25: 
+		case 27: 
 			$(".nav").find(".active").removeClass("active");
 			$(".n12").addClass("active"); 
 			break;
-		case 26: 
+		case 31: 
 			$(".nav").find(".active").removeClass("active");
 			$(".n13").addClass("active"); 
 			break;
