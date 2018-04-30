@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // Read necessary elements from the DOM once
 var box = document.querySelector('.simbox');
 var navbox = document.querySelector('#navbar');
@@ -245,4 +244,3 @@ var main = function() {
 }
 
 $(document).ready(main);
->>>>>>> navbar-vertical-v3
