@@ -41,40 +41,40 @@ const navigate = (navidx) => {
 			$(".nav").find(".active").removeClass("active");
 			$(".n2").addClass("active"); 
 			break;
-		case 6: 
+		case 5: 
 			$(".nav").find(".active").removeClass("active");
 			$(".n3").addClass("active"); 
 			break;
-		case 7: 
+		case 6: 
 			$(".nav").find(".active").removeClass("active");
 			$(".n4").addClass("active"); 
 			break;
-		case 13: 
+		case 12: 
 			$(".nav").find(".active").removeClass("active");
 			$(".n7").addClass("active"); 
 			break;
-		case 15: 
+		case 14: 
 			$(".nav").find(".active").removeClass("active");
 			$(".n9").addClass("active"); 
 			break;
-		case 17:
+		case 16:
 			$(".controls").show();
 			$(".controls a").show();
 			$(".nav").find(".active").removeClass("active");
 			$(".n10").addClass("active"); 
 			break;
-		case 21: 
+		case 20: 
 			$(".nav").find(".active").removeClass("active");
 			$(".n11").addClass("active"); 
 			break;
-		case 25:
+		case 24:
 			$(".controls").show();
 			$(".controls a").show();
-		case 27: 
+		case 26: 
 			$(".nav").find(".active").removeClass("active");
 			$(".n12").addClass("active"); 
 			break;
-		case 31: 
+		case 30: 
 			$(".nav").find(".active").removeClass("active");
 			$(".n13").addClass("active"); 
 			break;

@@ -5,15 +5,13 @@
 =====================================================-->
 <!-- Notes:
 	Removed all notes
-	Added sample load/unload video
+	Added sample load/unload video. Also muted the video.
 	
 	TODO:
 		-Switch NavCam during Pumpdown
 		-Move stage up during pumpdown
 		
 		-Note in-situ NavCam
-		-Add correct quadrants
-		-Add sound
 		-Fix hyperlink for controls
 		-Check names of tabs: position tab, stage tab?
 		(-anmations:
@@ -62,18 +60,18 @@
 		  <ul class="nav navbar-nav">
 			<li class="n1 active"><a href="javascript:navigate(0)">Vent Chamber</a></li>
 			<li class="n2"><a href="javascript:navigate(4)">Load Sample</a></li>
-			<li class="n3"><a href="javascript:navigate(6)">Close Door; Pump Down</a></li>
-			<li class="n4"><a href="javascript:navigate(7)">Take a Nav Cam Image (optional)</a></li>
+			<li class="n3"><a href="javascript:navigate(5)">Close Door; Pump Down</a></li>
+			<li class="n4"><a href="javascript:navigate(6)">Take a Nav Cam Image (optional)</a></li>
 			<!--
 			<li class="n5"><a href="javascript:navigate(11)">Rum Sample Cleaning (optional)</a></li>
 			<li class="n6"><a href="javascript:navigate(11)">Lower Stage</a></li>
 			-->
-			<li class="n7"><a href="javascript:navigate(13)">Move Sample to Imaging Position</a></li>
-			<li class="n9"><a href="javascript:navigate(15)">Turn Beam On; Start Imaging</a></li>
-			<li class="n10"><a href="javascript:navigate(17)">Verify Sample Height, Link, Shift to 4mm</a></li>
-			<li class="n11"><a href="javascript:navigate(21)">Run AutoUModeSource Centering</a></li>
-			<li class="n12"><a href="javascript:navigate(23)">Proceed with Imaging</a></li>
-			<li class="n13"><a href="javascript:navigate(31)">Shutdown</a></li>
+			<li class="n7"><a href="javascript:navigate(12)">Move Sample to Imaging Position</a></li>
+			<li class="n9"><a href="javascript:navigate(14)">Turn Beam On; Start Imaging</a></li>
+			<li class="n10"><a href="javascript:navigate(16)">Verify Sample Height, Link, Shift to 4mm</a></li>
+			<li class="n11"><a href="javascript:navigate(20)">Run AutoUModeSource Centering</a></li>
+			<li class="n12"><a href="javascript:navigate(22)">Proceed with Imaging</a></li>
+			<li class="n13"><a href="javascript:navigate(30)">Shutdown</a></li>
 		  </ul>
 		</div><!--/.nav-collapse -->
 	  </div>
@@ -107,13 +105,8 @@
 			<!-- Sample loading position -->
 			<li>
 				<h6>Only use the pull-bar to move the door. Load the sample.</h6>
-				<img src="magimgs/Step1.3 Vent.png" alt="Sample Load" class="img-responsive">
-				<a href="javascript:navigate(-1)" title="SampleLoad" style="position: absolute; left: 5.86%; top: 9.08%; width: 85.16%; height: 84.57%; z-index: 2;"></a>
-			</li>
-			<li>
-				<h6>Only use the pull-bar to move the door. Load the sample.</h6>
 				<a href="javascript:navigate(-1)" title="SampleLoad">
-					<video width=635px height=500px controls="controls" preload="none" onclick="this.play()">
+					<video width=635px height=500px controls muted preload="auto" onclick="this.play()">
 					  <source src="magimgs/SampleLoad.mp4" type="video/mp4">
 						Your browser does not support the video tag.
 					</video>
@@ -244,7 +237,7 @@
 			</li>
 			<li>
 				<h6>Re-check "Auto" for UC mode.Proceed with your experiment.</h6>
-				<img src="magimgs/Step6.51 LinkZ.png" alt="magellan" class="img-responsive">
+				<img src="magimgs/Step6.52 AutoUC.png" alt="magellan" class="img-responsive">
 				<a href="javascript:navigate(-1)" title="Yes" style="position: absolute; left: 92.27%; top: 28.12%; width: 1.64%; height: 1.95%; z-index: 2;"></a>
 			</li>
 			<!-- Imaging 
@@ -271,13 +264,8 @@
 			<!-- Sample loading position -->
 			<li>
 				<h6>Only use the pull-bar to move the door. Unload the sample.</h6>
-				<img src="magimgs/Step1.3 Vent.png" alt="Sample Unload" class="img-responsive">
-				<a href="javascript:navigate(-1)" title="SampleLoad" style="position: absolute; left: 5.86%; top: 9.08%; width: 85.16%; height: 84.57%; z-index: 2;"></a>
-			</li>
-			<li>
-				<h6>Only use the pull-bar to move the door. Unload the sample.</h6>
-				<a href="javascript:navigate(-1)" title="Sample Unload">
-					<video width=635px height=528px controls="controls" preload="none" onclick="this.play()">
+				<a href="javascript:navigate(-1)" title="Sample Unload"
+					<video width=635px height=500px controls muted preload="auto" onclick="this.play()">
 					  <source src="magimgs/SampleUnload.mp4" type="video/mp4">
 						Your browser does not support the video tag.
 					</video>
@@ -289,16 +277,7 @@
 				<a href="javascript:navigate(-1)" title="Pump" style="position: absolute; left: 81.19%; top: 10.8%; width: 7%; height: 2.6%; z-index: 2;"></a>
 			</li>
 			<li>
-				<div class="balloons">
-					<div><span>C</span></div>
-					<div><span>o</span></div>
-					<div><span>n</span></div>
-					<div><span>g</span></div>
-					<div><span>r</span></div>
-					<div><span>a</span></div>
-					<div><span>t</span></div>
-					<div><span>s</span></div>
-				</div>
+				<h6> You've completed the simulation. </h6>
 				<div class="congrats">
 					<a href="javascript:navigate(-1)" title="Pump" style="position: absolute; left: 5%; top: 5%; width: 80%; height: 80%; z-index: 2;">
 						<h4>You've completed the simulation!</h4>
