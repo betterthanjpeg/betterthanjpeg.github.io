@@ -40,6 +40,7 @@
 	
 	<!-- Custom styles for this template -->
 	<link href="css/magellan.css" rel="stylesheet">
+	<link href="css/congrats.css" rel="stylesheet">
 </head>
   
 
@@ -264,7 +265,7 @@
 			<!-- Sample loading position -->
 			<li>
 				<h6>Only use the pull-bar to move the door. Unload the sample.</h6>
-				<a href="javascript:navigate(-1)" title="Sample Unload"
+				<a href="javascript:navigate(-1)" title="Sample Unload">
 					<video width=635px height=500px controls muted preload="auto" onclick="this.play()">
 					  <source src="magimgs/SampleUnload.mp4" type="video/mp4">
 						Your browser does not support the video tag.
@@ -279,9 +280,12 @@
 			<li>
 				<h6> You've completed the simulation. </h6>
 				<div class="congrats">
-					<a href="javascript:navigate(-1)" title="Pump" style="position: absolute; left: 5%; top: 5%; width: 80%; height: 80%; z-index: 2;">
-						<h4>You've completed the simulation!</h4>
-					</a>
+					<div class="magnify">
+						<!-- This is the magnifying glass which will contain the original/large version -->
+						<div class="large"></div>
+						<!-- This is the small image -->
+						<img class="small" src="magimgs/Congratulations.png" width="500"/> 
+					</div>
 				</div>
 			</li>
 		</ol>
