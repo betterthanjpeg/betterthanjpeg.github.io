@@ -59,11 +59,33 @@ html,body {
 	border: none;
 	z-index: 100;
 }
-.simbox a:hover {
+.simbox a:not(.no-hover):hover {
 	border: 2px solid red;
 	z-index: 100;
 }
 
+/* ========== TOGGGLE TEST ========== */
+li.toggletest a{
+	font-style: italic;
+	font-size: 16px;
+}
+
+.toggleactive{
+	border: 2px solid red;
+	border-radius: 10px;
+	color: red;
+	height: 30px;
+	margin: 0;
+}
+.toggleactive a.no-hover{
+	margin: 0;
+}
+.no-hover {
+	cursor: default;
+	z-index: 100;
+}
+
+/* ====================================*/
 /* setting up carousel elements: change opacity of current image */ 
 /* what 's the purpose of keeping this here???
 .active {
@@ -86,7 +108,9 @@ html,body {
   margin: auto;
 }
 
-/* ======NAVBAR====== */
+
+
+/* ===========	NAVBAR	================ */
 .navbar h3{
 	color: white;
 	margin-left: 2px;
@@ -131,9 +155,15 @@ html,body {
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus {
 	background-color: inherit;
 }
-/*
-.navbar-nav > li > a {padding-top:5px !important; padding-bottom:5px !important;}
-.navbar {min-height:32px !important}
+
+.navbar-nav > li > a {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding-top:5px !important; 
+	padding-bottom:5px !important;
+}
+
+/*.navbar {min-height:32px !important}
 */
 
 /* ============= CONTROLS =============== */ 
@@ -154,7 +184,7 @@ html,body {
 	height: 120px;
 	z-index: 100;
 }
-.controls a:hover {
+.controls :not(.no-hover) a:hover {
 	left: 200px;
 	border: 2px solid red;
 }
@@ -173,4 +203,6 @@ html,body {
 	left: 30%;
 	top: 40%;
 	color: black;
+	cursor: none;
 }
+

@@ -58,7 +58,7 @@ const navigate = (navidx) => {
 		case 6: 
 			$(".nav").find(".active").removeClass("active");
 			$(".n4").addClass("active"); 
-			break;
+			break;			
 		case 12: 
 			$(".nav").find(".active").removeClass("active");
 			$(".n7").addClass("active"); 
@@ -160,8 +160,21 @@ const navigate = (navidx) => {
     currentPos.classList.add('current');
 }
 
+
+const toggletest = () => {
+	// check if active
+	if($(".toggletest").hasClass("toggleactive")){ 
+		$(".toggletest").removeClass("toggleactive");
+		$("a").removeClass('no-hover');
+	} else {
+		$(".toggletest").addClass("toggleactive");
+		$("a").addClass("no-hover");
+	};
+}
+
 var main = function() {
 	$(".controls").hide();
+	
 	navigate(0);
 	
 }
