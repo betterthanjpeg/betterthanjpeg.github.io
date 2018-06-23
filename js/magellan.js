@@ -41,7 +41,7 @@ const navigate = (navidx) => {
 		imgidx = navidx;
 	}
 
-	
+	// depending on what image is currently active, set which value on the left menu is active
 	switch (imgidx) {
 		case 0:
 			$(".nav").find(".active").removeClass("active");
@@ -60,6 +60,11 @@ const navigate = (navidx) => {
 			$(".n4").addClass("active"); 
 			break;			
 		case 12: 
+			$(".nav").find(".active").removeClass("active");
+			$(".n5").addClass("active"); 
+			$(".n7").addClass("active"); 
+			break;
+		case 13:
 			$(".nav").find(".active").removeClass("active");
 			$(".n7").addClass("active"); 
 			break;
