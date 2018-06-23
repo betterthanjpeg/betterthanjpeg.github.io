@@ -1,80 +1,12 @@
-<!--===================================================
-	Title: test.html
-	Author: Tiffany thuang13@stanford.edu
-	Last Modified: 5/1/2018
-	Purpose: test out cute code --test out magnifying glass
-		okay this works!
-=====================================================-->
+/*===================================================
+	Title: congrats.js
+	Authors: Tiffany
+	Description: Describes the congrats magnifier
+	Last modified: 5/2/2018
+=====================================================*/
 
 
-<html lang="en">
-<head>
-	<title>Magellan simulation</title>
-	
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-	
-	<!-- Custom styles for this template 
-	<link href="css/test.css" rel="stylesheet"> -->
-	<style type="text/css">
-		/*Some CSS*/
-		* {margin: 0; padding: 0;}
-		.magnify {width: 200px; margin: 50px auto; position: relative;}
-
-		/*Lets create the magnifying glass*/
-		.large {
-			width: 175px; height: 175px;
-			position: absolute;
-			border-radius: 100%;
-			
-			/*Multiple box shadows to achieve the glass effect*/
-			box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.85), 
-			0 0 7px 7px rgba(0, 0, 0, 0.25), 
-			inset 0 0 40px 2px rgba(0, 0, 0, 0.25);
-			
-			/*Lets load up the large image first*/
-			background: url('http://thecodeplayer.com/uploads/media/iphone.jpg') no-repeat;
-			
-			/*hide the glass by default*/
-			display: none;
-		}
-
-		/*To solve overlap bug at the edges during magnification*/
-		.small { display: block; }
-	</style>
-</head>
-  
-<body>
-	<!-- Lets make a simple image magnifier -->
-	<div class="magnify">
-		
-		<!-- This is the magnifying glass which will contain the original/large version -->
-		<div class="large"></div>
-		
-		<!-- This is the small image -->
-		<img class="small" src="http://thecodeplayer.com/uploads/media/iphone.jpg" width="200"/>
-		
-	</div>
-
-	<!-- Lets load up prefixfree to handle CSS3 vendor prefixes -->
-	<script src="http://thecodeplayer.com/uploads/js/prefixfree.js" type="text/javascript"></script>
-	<!-- You can download it from http://leaverou.github.com/prefixfree/ -->
-
-	<!-- Time for jquery action -->
-	<script src="http://thecodeplayer.com/uploads/js/jquery-1.7.1.min.js" type="text/javascript"></script>
-</body>
-
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/docs.min.js"></script>
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="js/ie10-viewport-bug-workaround.js"></script>
-<script src="js/imageMapResizer.min.js"></script>
-<script type="text/javascript">
 $(document).ready(function(){
-
 	var native_width = 0;
 	var native_height = 0;
 
@@ -141,6 +73,3 @@ $(document).ready(function(){
 		}
 	})
 })
-</script>
-
-</html>
