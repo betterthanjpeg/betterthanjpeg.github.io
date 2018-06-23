@@ -2,7 +2,7 @@
 	Title: magellan.js
 	Authors: Tiffany
 	Description: Describes how to maneuver the site
-	Last modified: 5/2/2018
+	Last modified: 6/22/2018
 =====================================================*/
 
 // Read necessary elements from the DOM once
