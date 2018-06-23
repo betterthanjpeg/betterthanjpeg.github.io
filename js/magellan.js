@@ -47,53 +47,53 @@ const navigate = (navidx) => {
 			$(".nav").find(".active").removeClass("active");
 			$(".n1").addClass("active"); 
 			break;
-		case 4: 
+		case 5: 
 			$(".nav").find(".active").removeClass("active");
 			$(".n2").addClass("active"); 
 			break;
-		case 5: 
+		case 6: 
 			$(".nav").find(".active").removeClass("active");
 			$(".n3").addClass("active"); 
 			break;
-		case 6: 
+		case 7: 
 			$(".nav").find(".active").removeClass("active");
 			$(".n4").addClass("active"); 
 			break;			
-		case 12: 
+		case 13: 
 			$(".nav").find(".active").removeClass("active");
 			$(".n5").addClass("active"); 
 			$(".n7").addClass("active"); 
 			break;
-		case 13:
+		case 14:
 			$(".nav").find(".active").removeClass("active");
 			$(".n7").addClass("active"); 
 			break;
-		case 14: 
+		case 15: 
 			$(".nav").find(".active").removeClass("active");
 			$(".n9").addClass("active"); 
 			break;
-		case 16:
+		case 17:
 			$(".controls").show();
 			$(".controls a").show();
 			$(".nav").find(".active").removeClass("active");
 			$(".n10").addClass("active"); 
 			break;
-		case 20: 
+		case 21: 
 			$(".nav").find(".active").removeClass("active");
 			$(".n11").addClass("active"); 
 			break;
-		case 24:
+		case 25:
 			$(".controls").show();
 			$(".controls a").show();
-		case 26: 
+		case 27: 
 			$(".nav").find(".active").removeClass("active");
 			$(".n12").addClass("active"); 
 			break;
-		case 30: 
+		case 31: 
 			$(".nav").find(".active").removeClass("active");
 			$(".n13").addClass("active"); 
 			break;
-		case 34:
+		case 35:
 			//Now the mousemove function
 			$(".magnify").mousemove(function(e){
 				//When the user hovers on the image, the script will first calculate
