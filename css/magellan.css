@@ -69,6 +69,7 @@ html,body {
 li.toggletest a{
 	font-style: italic;
 	font-size: 16px;
+	color: red !important;
 }
 
 .toggleactive{
