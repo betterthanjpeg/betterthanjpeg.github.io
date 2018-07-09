@@ -2,14 +2,15 @@
 	Title: magellan.js
 	Authors: Tiffany
 	Description: Describes how to maneuver the site
-	Last modified: 6/22/2018
+	Last modified: 7/9/2018
 =====================================================*/
 
+// For navigation to next screenshot
 // Read necessary elements from the DOM once
-var box = document.querySelector('.simbox');
-var navbox = document.querySelector('#navbar');
-var next = box.querySelector('.next');
-var prev = box.querySelector('.prev');
+ var box = document.querySelector('.simbox');
+/*
+ var next = box.querySelector('.next');
+var prev = box.querySelector('.prev'); */
 
 // Define the global imgidx, the items and the 
 // current item 
@@ -20,11 +21,13 @@ var currentPos = imgsall[0];
 
 box.classList.add('active');
 
-// For congrats animation
+// For congrats magnifier
 var native_width = 0;
 var native_height = 0;
 
 const navigate = (navidx) => {
+
+	// ====== MOVE TO NEXT SCREENSHOT ====================
 	// hide the old current list items: removes the 'current' class 
     currentPos.classList.remove('current');
     $(".controls").hide();
@@ -32,15 +35,12 @@ const navigate = (navidx) => {
     // calculate the new position
 	//imgidx = navidx;
 	if (navidx == -1) {
-		/*
-		imgidx = (imgidx - navidx); 
-		imgidx = imgidx < 0 ? imgslength - 1 : imgidx;
-		*/
 		imgidx = (imgidx >= imgslength-1) ? 0: imgidx - navidx;
 	} else {
 		imgidx = navidx;
 	}
 
+	// ====== HIGHLIGHT RELEVANT NAVBAR ICON ====================
 	// depending on what image is currently active, set which value on the left menu is active
 	switch (imgidx) {
 		case 0:
@@ -58,7 +58,7 @@ const navigate = (navidx) => {
 		case 7: 
 			$(".nav").find(".active").removeClass("active");
 			$(".n4").addClass("active"); 
-			break;			
+			break;
 		case 13: 
 			$(".nav").find(".active").removeClass("active");
 			$(".n5").addClass("active"); 
@@ -73,7 +73,7 @@ const navigate = (navidx) => {
 			$(".n9").addClass("active"); 
 			break;
 		case 17:
-			$(".controls").show();
+			$(".controls").show(); //Show controls graphic
 			$(".controls a").show();
 			$(".nav").find(".active").removeClass("active");
 			$(".n10").addClass("active"); 
@@ -83,7 +83,7 @@ const navigate = (navidx) => {
 			$(".n11").addClass("active"); 
 			break;
 		case 25:
-			$(".controls").show();
+			$(".controls").show(); //Show controls graphic
 			$(".controls a").show();
 		case 27: 
 			$(".nav").find(".active").removeClass("active");
@@ -93,6 +93,7 @@ const navigate = (navidx) => {
 			$(".nav").find(".active").removeClass("active");
 			$(".n13").addClass("active"); 
 			break;
+		// ====== CONGRATS MAGNIFIER  ====================
 		case 35:
 			//Now the mousemove function
 			$(".magnify").mousemove(function(e){
@@ -165,7 +166,7 @@ const navigate = (navidx) => {
     currentPos.classList.add('current');
 }
 
-
+// ====== TEST YOURSELF TOGGLE ====================
 const toggletest = () => {
 	// check if active
 	if($(".toggletest").hasClass("toggleactive")){ 
