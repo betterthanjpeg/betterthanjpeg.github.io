@@ -13,6 +13,13 @@ html,body {
   height: 750px;
   border: 2px solid black;
 }
+a {
+	color: white;
+}
+a:hover {
+	color: red;
+	text-decoration: none;
+}
 
 .simbox {
   width: 700px;
@@ -180,14 +187,7 @@ li.toggletest a{
 	margin-top: -100px;
 	margin-left: 220px;
 }
-.controls a{
-	border: none;
-	display: block;
-	height: 120px;
-	z-index: 100;
-}
-.controls :not(.no-hover) a:hover {
-	left: 220px;
+.controls :not(.no-hover) img:hover {
 	border: 2px solid red;
 }
 

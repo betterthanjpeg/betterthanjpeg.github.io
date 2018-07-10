@@ -6,18 +6,11 @@
 =====================================================*/
 
 // For navigation to next screenshot
-// Read necessary elements from the DOM once
- var box = document.querySelector('.simbox');
-/*
- var next = box.querySelector('.next');
-var prev = box.querySelector('.prev'); */
-
-// Define the global imgidx, the items and the 
-// current item 
-var imgidx = 0;
+var box = document.querySelector('.simbox');
 var imgsall = box.querySelectorAll('.content li');
 var imgslength = imgsall.length;
 var currentPos = imgsall[0];
+var imgidx = 0;
 
 box.classList.add('active');
 
@@ -27,7 +20,7 @@ var native_height = 0;
 
 const navigate = (navidx) => {
 
-	// ====== MOVE TO NEXT SCREENSHOT ====================
+	// ====== MOVE TO NEXT SCREENSHOT OR SPECIFIED SCREENSHOT====================
 	// hide the old current list items: removes the 'current' class 
     currentPos.classList.remove('current');
     $(".controls").hide();
@@ -39,62 +32,69 @@ const navigate = (navidx) => {
 	} else {
 		imgidx = navidx;
 	}
+	// set new current element 
+    // and add CSS class
+    currentPos = imgsall[imgidx];
+    currentPos.classList.add('current');
 
 	// ====== HIGHLIGHT RELEVANT NAVBAR ICON ====================
-	// depending on what image is currently active, set which value on the left menu is active
-	switch (imgidx) {
-		case 0:
+	// depending on what image is current, set which value on the left menu is active
+	var currentimg = currentPos.id;
+	console.log("current image id:");
+	console.log(currentimg);
+	
+	switch (currentimg) {
+		case "welcomeimg":
 			$(".nav").find(".active").removeClass("active");
-			$(".n1").addClass("active"); 
+			$(".vent").addClass("active"); 
 			break;
-		case 5: 
+		case "loadimg": 
 			$(".nav").find(".active").removeClass("active");
-			$(".n2").addClass("active"); 
+			$(".load").addClass("active"); 
 			break;
-		case 6: 
+		case "pumpimg": 
 			$(".nav").find(".active").removeClass("active");
-			$(".n3").addClass("active"); 
+			$(".pump").addClass("active"); 
 			break;
-		case 7: 
+		case "navcamimg": 
 			$(".nav").find(".active").removeClass("active");
-			$(".n4").addClass("active"); 
+			$(".navcam").addClass("active"); 
 			break;
-		case 13: 
+		case "samplecleanimg": 
 			$(".nav").find(".active").removeClass("active");
-			$(".n5").addClass("active"); 
-			$(".n7").addClass("active"); 
+			$(".sampleclean").addClass("active"); 
 			break;
-		case 14:
+		case "moveimg":
 			$(".nav").find(".active").removeClass("active");
-			$(".n7").addClass("active"); 
+			$(".move").addClass("active"); 
 			break;
-		case 15: 
+		case "beamonimg": 
 			$(".nav").find(".active").removeClass("active");
-			$(".n9").addClass("active"); 
+			$(".beamon").addClass("active"); 
 			break;
-		case 17:
+		case "linkzimg":
 			$(".controls").show(); //Show controls graphic
 			$(".controls a").show();
 			$(".nav").find(".active").removeClass("active");
-			$(".n10").addClass("active"); 
+			$(".linkz").addClass("active"); 
 			break;
-		case 21: 
+		case "autouimg": 
 			$(".nav").find(".active").removeClass("active");
-			$(".n11").addClass("active"); 
+			$(".autou").addClass("active"); 
 			break;
-		case 25:
+		case "linkz2":
 			$(".controls").show(); //Show controls graphic
 			$(".controls a").show();
-		case 27: 
+		case "proceedimg": 
 			$(".nav").find(".active").removeClass("active");
-			$(".n12").addClass("active"); 
+			$(".proceed").addClass("active"); 
 			break;
-		case 31: 
+		case "shutdownimg": 
 			$(".nav").find(".active").removeClass("active");
-			$(".n13").addClass("active"); 
+			$(".shutdown").addClass("active"); 
 			break;
 		// ====== CONGRATS MAGNIFIER  ====================
-		case 35:
+		case "congratsimg":
 			//Now the mousemove function
 			$(".magnify").mousemove(function(e){
 				//When the user hovers on the image, the script will first calculate
@@ -160,10 +160,6 @@ const navigate = (navidx) => {
 			break;
 		default:
 	}
-    // set new current element 
-    // and add CSS class
-    currentPos = imgsall[imgidx];
-    currentPos.classList.add('current');
 }
 
 // ====== TEST YOURSELF TOGGLE ====================
@@ -181,7 +177,7 @@ const toggletest = () => {
 var main = function() {
 	$(".controls").hide();
 	
-	navigate(0);
+	navigate(0); // Go to 0th screenshot
 	
 }
 
