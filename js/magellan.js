@@ -2,29 +2,25 @@
 	Title: magellan.js
 	Authors: Tiffany
 	Description: Describes how to maneuver the site
-	Last modified: 6/22/2018
+	Last modified: 7/9/2018
 =====================================================*/
 
-// Read necessary elements from the DOM once
+// For navigation to next screenshot
 var box = document.querySelector('.simbox');
-var navbox = document.querySelector('#navbar');
-var next = box.querySelector('.next');
-var prev = box.querySelector('.prev');
-
-// Define the global imgidx, the items and the 
-// current item 
-var imgidx = 0;
 var imgsall = box.querySelectorAll('.content li');
 var imgslength = imgsall.length;
 var currentPos = imgsall[0];
+var imgidx = 0;
 
 box.classList.add('active');
 
-// For congrats animation
+// For congrats magnifier
 var native_width = 0;
 var native_height = 0;
 
 const navigate = (navidx) => {
+
+	// ====== MOVE TO NEXT SCREENSHOT OR SPECIFIED SCREENSHOT====================
 	// hide the old current list items: removes the 'current' class 
     currentPos.classList.remove('current');
     $(".controls").hide();
@@ -32,68 +28,73 @@ const navigate = (navidx) => {
     // calculate the new position
 	//imgidx = navidx;
 	if (navidx == -1) {
-		/*
-		imgidx = (imgidx - navidx); 
-		imgidx = imgidx < 0 ? imgslength - 1 : imgidx;
-		*/
 		imgidx = (imgidx >= imgslength-1) ? 0: imgidx - navidx;
 	} else {
 		imgidx = navidx;
 	}
+	// set new current element 
+    // and add CSS class
+    currentPos = imgsall[imgidx];
+    currentPos.classList.add('current');
 
-	// depending on what image is currently active, set which value on the left menu is active
-	switch (imgidx) {
-		case 0:
+	// ====== HIGHLIGHT RELEVANT NAVBAR ICON ====================
+	// depending on what image is current, set which value on the left menu is active
+	var currentimg = currentPos.id;
+	console.log("current image id:");
+	console.log(currentimg);
+	
+	switch (currentimg) {
+		case "welcomeimg":
 			$(".nav").find(".active").removeClass("active");
-			$(".n1").addClass("active"); 
+			$(".vent").addClass("active"); 
 			break;
-		case 5: 
+		case "loadimg": 
 			$(".nav").find(".active").removeClass("active");
-			$(".n2").addClass("active"); 
+			$(".load").addClass("active"); 
 			break;
-		case 6: 
+		case "pumpimg": 
 			$(".nav").find(".active").removeClass("active");
-			$(".n3").addClass("active"); 
+			$(".pump").addClass("active"); 
 			break;
-		case 7: 
+		case "navcamimg": 
 			$(".nav").find(".active").removeClass("active");
-			$(".n4").addClass("active"); 
-			break;			
-		case 13: 
-			$(".nav").find(".active").removeClass("active");
-			$(".n5").addClass("active"); 
-			$(".n7").addClass("active"); 
+			$(".navcam").addClass("active"); 
 			break;
-		case 14:
+		case "samplecleanimg": 
 			$(".nav").find(".active").removeClass("active");
-			$(".n7").addClass("active"); 
+			$(".sampleclean").addClass("active"); 
 			break;
-		case 15: 
+		case "moveimg":
 			$(".nav").find(".active").removeClass("active");
-			$(".n9").addClass("active"); 
+			$(".move").addClass("active"); 
 			break;
-		case 17:
-			$(".controls").show();
+		case "beamonimg": 
+			$(".nav").find(".active").removeClass("active");
+			$(".beamon").addClass("active"); 
+			break;
+		case "linkzimg":
+			$(".controls").show(); //Show controls graphic
 			$(".controls a").show();
 			$(".nav").find(".active").removeClass("active");
-			$(".n10").addClass("active"); 
+			$(".linkz").addClass("active"); 
 			break;
-		case 21: 
+		case "autouimg": 
 			$(".nav").find(".active").removeClass("active");
-			$(".n11").addClass("active"); 
+			$(".autou").addClass("active"); 
 			break;
-		case 25:
-			$(".controls").show();
+		case "linkz2":
+			$(".controls").show(); //Show controls graphic
 			$(".controls a").show();
-		case 27: 
+		case "proceedimg": 
 			$(".nav").find(".active").removeClass("active");
-			$(".n12").addClass("active"); 
+			$(".proceed").addClass("active"); 
 			break;
-		case 31: 
+		case "shutdownimg": 
 			$(".nav").find(".active").removeClass("active");
-			$(".n13").addClass("active"); 
+			$(".shutdown").addClass("active"); 
 			break;
-		case 35:
+		// ====== CONGRATS MAGNIFIER  ====================
+		case "congratsimg":
 			//Now the mousemove function
 			$(".magnify").mousemove(function(e){
 				//When the user hovers on the image, the script will first calculate
@@ -159,13 +160,9 @@ const navigate = (navidx) => {
 			break;
 		default:
 	}
-    // set new current element 
-    // and add CSS class
-    currentPos = imgsall[imgidx];
-    currentPos.classList.add('current');
 }
 
-
+// ====== TEST YOURSELF TOGGLE ====================
 const toggletest = () => {
 	// check if active
 	if($(".toggletest").hasClass("toggleactive")){ 
@@ -180,7 +177,7 @@ const toggletest = () => {
 var main = function() {
 	$(".controls").hide();
 	
-	navigate(0);
+	navigate(0); // Go to 0th screenshot
 	
 }
 
