@@ -26,19 +26,17 @@ const navigate = (navidx) => {
     $(".controls").hide();
 	
     // calculate the new position
-	//imgidx = navidx;
 	if (navidx == -1) {
 		imgidx = (imgidx >= imgslength-1) ? 0: imgidx - navidx;
 	} else {
 		imgidx = navidx;
 	}
-	// set new current element 
-    // and add CSS class
+	// set new current element and add CSS class
     currentPos = imgsall[imgidx];
     currentPos.classList.add('current');
 
 	// ====== HIGHLIGHT RELEVANT NAVBAR ICON ====================
-	// depending on what image is current, set which value on the left menu is active
+	// depending on what image is current, set which value on the nav menu is active
 	var currentimg = currentPos.id;
 	console.log("current image id:");
 	console.log(currentimg);

@@ -32,7 +32,7 @@
 	<nav class="navbar navbar-inverse navbar-fixed-left">
 	  <div class="navbar-wrapper">
 		<div id="navbar" class="collapse navbar-collapse">
-		  <h2> Magellan </h2>
+		  <h2> Magellan SEM </h2>
 		  <ul class="nav navbar-nav">
 			<li class="vent active"><a href="javascript:navigate(0)">Vent Chamber</a></li>
 			<li class="load"><a href="javascript:navigate(5)">Load Sample</a></li>
@@ -45,7 +45,9 @@
 			<li class="autou"><a href="javascript:navigate(27)">Run AutoUModeSource Centering</a></li>
 			<li class="proceed"><a href="javascript:navigate(36)">Proceed with Imaging</a></li>
 			<li class="shutdown"><a href="javascript:navigate(37)">Shutdown</a></li>
-			<li class="toggletest"><a href="javascript:toggletest()" alt="Turn off red outlines">Test yourself</a></li>
+			<li class="toggletest"><a href="javascript:toggletest()" title="Turn off red outlines">TEST YOURSELF</a></li>
+			<li>.</li>
+			<li class="feedback"><a target=_blank href=https://stanforduniversity.qualtrics.com/jfe/form/SV_7X2Zg3B3B6HqjDn>Provide feedback :)</a></li>
 		  </ul>
 		</div><!--/.nav-collapse -->
 	  </div>
@@ -54,7 +56,8 @@
 	<!-- ============ SIMULATION BOX ============== -->
 
 	<div class="simbox">
-		<ol class="content"> <!-- Ordered list -->
+		<p class="arrows">
+		<ol class="content"> 
 			<!-- Welcome -->
 			<li id="welcomeimg">
 				<h6>Welcome. This simulation is best viewed in full screen and is not mobile compatible.</h6>
@@ -81,11 +84,11 @@
 				<img src="magimgs/Step1.2 Vent.png"   class="img-responsive">
 				<a href="javascript:navigate(-1)"  style="position: absolute; left: 48.2%; top: 57.1%; width: 7.8%; height: 2.72%; z-index: 2;"></a>
 			</li>
-			<!-- Sample loading position -->
+			<!-- Sample loading -->
 			<li id="loadimg">
 				<h6>Only use the pull-bar to move the door. Unload the sample.</h6>
 					<video width=635px height=500px controls muted preload="auto" onclick="this.play()">
-					  <source src="magimgs/SampleUnload.mp4" type="video/mp4">
+					  <source src="magimgs/SampleLoad.mp4" type="video/mp4">
 						Your browser does not support the video tag.
 					</video>
 				<a href="javascript:navigate(-1)" style="position: absolute; left: 85%; top: 5%; width: 10%; height: 5%; z-index: 2;">Continue
@@ -132,17 +135,17 @@
 			</li>
 			<li>
 				<h6>Move sample to plasma cleaning position</h6>
-				<img src="magimgs/Step1.01 Vent.png" class="img-responsive">
+				<img src="magimgs/Step4.1 SampleCleaning.png" class="img-responsive">
 				<a href="javascript:navigate(-1)"  style="position: absolute; left: 81.48%; top: 34.67%; width: 9.45%; height: 1.95%; z-index: 2;"></a>
 			</li>
 			<li>
 				<h6>Move sample to plasma cleaning position</h6>
-				<img src="magimgs/Step1.01 Vent.png" class="img-responsive">
+				<img src="magimgs/Step4.12 SampleCleaning.png" class="img-responsive">
 				<a href="javascript:navigate(-1)"  style="position: absolute; left: 81.48%; top: 36.33%; width: 9.45%; height: 1.95%; z-index: 2;"></a>
 			</li>
 			<li>
 				<h6>Run sample cleaning</h6>
-				<img src="magimgs/Step1.01 Vent.png" class="img-responsive">
+				<img src="magimgs/Step4.1 SampleCleaning.png" class="img-responsive">
 				<a href="javascript:navigate(-1)"  style="position:  absolute; left: 25%; top: 2.44%; width: 4.69%; height: 2.44%; z-index: 2;"></a>
 			</li>			
 			<li>
@@ -155,7 +158,7 @@
 				<img src="magimgs/Step4.3 SampleCleaning.png" class="img-responsive">
 				<a href="javascript:navigate(-1)"  style="position: absolute; left: 36.17%; top: 59.18%; width: 7.42%; height: 2.44%; z-index: 2;"></a>
 			</li>
-			<!--12Adjust sample height/ Cant add alternate path here -->
+			<!--Adjust sample height -->
 			<li id="moveimg">
 				<h6>Adjust sample height. Center stage (or center on feature of interest)</h6>
 				<img src="magimgs/Step5 Sample height.png"   class="img-responsive">
@@ -244,17 +247,12 @@
 				<img src="magimgs/Step6.52 AutoUC.png"   class="img-responsive">
 				<a href="javascript:navigate(-1)"  style="position: absolute; left: 92.27%; top: 28.12%; width: 1.64%; height: 1.95%; z-index: 2;"></a>
 			</li>
-			<!-- Imaging 
-			<li>
-				<h6>Proceed with your experiment. When done, save the image. </h6>
-				<img src="magimgs/Step6.51 LinkZ.png"   class="img-responsive">
-				<a href="javascript:navigate(-1)"  style="position: absolute; left: 0.55%; top: 9.08%; width: 23.28%; height: 1.95%; z-index: 2;"></a>
-			</li>
-			<!-- Shutdown -->
+			<!-- Imaging -->
 			<li id="proceedimg">
 				<h6>Proceed with your experiment. When done, go through the shutdown procedure. Turn the beam off</h6>
 				<img src="magimgs/Step6.51 LinkZ.png"   class="img-responsive">
 				<a href="javascript:navigate(-1)"  style="position: absolute; left: 81.5%; top: 17.7%; width: 5.56%; height: 2.72%; z-index: 2;"></a>
+			<!-- Shutdown -->
 			<li id="shutdownimg">
 				<h6>Vent the chamber. Check that stage is at Sample Loading position (X=80, Y=0). Only use the pull-bar to move the door. </h6>
 				<img src="magimgs/Step1 Vent.png"   class="img-responsive">
@@ -311,7 +309,6 @@
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="js/ie10-viewport-bug-workaround.js"></script>
 <script src="js/imageMapResizer.min.js"></script>
-
 
 <!-- this script should make image mapping work when the windows are different sizes -->
 <script type="text/javascript">

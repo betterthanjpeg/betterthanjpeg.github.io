@@ -2,7 +2,7 @@
 	Title: magellan.css
 	Authors: Tiffany
 	Description: Describes the layout of the page
-	Last modified: 6/22/2018
+	Last modified: 7/9/2018
 =====================================================*/
 
 html,body {
@@ -57,19 +57,28 @@ a:hover {
 	display: block;; /* decide later if i want to use this */
 }
 
-
-/*
-.hoverimg a { position:relative; }
-.hoverimg a span { position:absolute; display:none; z-index:99; }
-.hoverimg a:hover span { display:block; }
-*/
-.simbox a{
+.simbox a:not(.no-hover){ 
+	border: 1px solid red;
+	z-index: 100;
+}
+.simbox a.no-hover{ 
 	border: none;
 	z-index: 100;
 }
+
 .simbox a:not(.no-hover):hover {
-	border: 2px solid red;
+	border: 2px solid red; 
+	/*
+	border: none; */
 	z-index: 100;
+}
+/* ========== FEEDBACK ==============*/
+.feedback {
+	background-color: white;
+	color: black;
+}
+.feedback a:hover{
+	color: red !important;
 }
 
 /* ========== TOGGGLE TEST ========== */
@@ -93,13 +102,7 @@ li.toggletest a{
 	z-index: 100;
 }
 
-/* ====================================*/
-/* setting up carousel elements: change opacity of current image */ 
-/* what 's the purpose of keeping this here???
-.active {
-  height: 512px;
-}
-*/
+/* ============ LIST ===================*/
 .active li {
   position: absolute;
   display: none;
@@ -170,9 +173,6 @@ li.toggletest a{
 	padding-top:8px !important; 
 	padding-bottom:8px !important;
 }
-
-/*.navbar {min-height:32px !important}
-*/
 
 /* ============= CONTROLS =============== */ 
 .controls {
