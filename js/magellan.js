@@ -83,6 +83,7 @@ const navigate = (navidx) => {
 		case "linkz2":
 			$(".controls").show(); //Show controls graphic
 			$(".controls a").show();
+			break;
 		case "proceedimg": 
 			$(".nav").find(".active").removeClass("active");
 			$(".proceed").addClass("active"); 

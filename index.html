@@ -8,6 +8,18 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-145241353-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-145241353-1');
+</script>
+
+
 <head>
 	<title>Magellan simulation</title>
 	
@@ -43,8 +55,8 @@
 			<li class="beamon"><a href="javascript:navigate(18)">Turn Beam On; Start Imaging</a></li>
 			<li class="linkz"><a href="javascript:navigate(20)">Verify Sample Height, Link, Shift to 4mm</a></li>
 			<li class="autou"><a href="javascript:navigate(25)">Run AutoUModeSource Centering</a></li>
-			<li class="proceed"><a href="javascript:navigate(34)">Proceed with Imaging</a></li>
-			<li class="shutdown"><a href="javascript:navigate(35)">Shutdown</a></li>
+			<li class="proceed"><a href="javascript:navigate(35)">Proceed with Imaging</a></li>
+			<li class="shutdown"><a href="javascript:navigate(39)">Shutdown</a></li>
 			<li class="toggletest"><a href="javascript:toggletest()" title="Turn off red outlines">TEST YOURSELF</a></li>
 			<li>&nbsp </li>
 			<li class="feedback"><a target=_blank href=https://stanforduniversity.qualtrics.com/jfe/form/SV_7X2Zg3B3B6HqjDn>Provide feedback</a></li>
@@ -118,41 +130,46 @@
 				<a href="javascript:navigate(-1)"  style="position: absolute; left: 10%; top: 10%; width: 80%; height: 80%; z-index: 2;"></a>
 			</li>
 			<!--Plasma clean process -->
-			<li id="samplecleanimg">
+			<li id="samplecleanimg"> <!-- pos tab -->
 				<h6>Run sample cleaning. Move sample to plasma cleaning position</h6>
 				<img src="magimgs/Step3.8 NavCam.png" class="img-responsive">
 				<a href="javascript:navigate(-1)"  style="position: absolute; left: 82.5%; top: 4.88%; width: 2.81%; height: 3.42%; z-index: 2;"></a>
 			</li>
-			<li>
+			<li>  <!-- plasma clean1 -->
 				<h6>Move sample to plasma cleaning position</h6>
-				<img src="magimgs/Step4.1 SampleCleaning.png" class="img-responsive">
+				<img src="magimgs/Step4.0 SampleCleaning.png" class="img-responsive">
 				<a href="javascript:navigate(-1)"  style="position: absolute; left: 81.48%; top: 34.67%; width: 9.45%; height: 1.95%; z-index: 2;"></a>
 			</li>
-			<li>
+			<li>  <!-- plasma clean2 -->
 				<h6>Move sample to plasma cleaning position</h6>
-				<img src="magimgs/Step4.12 SampleCleaning.png" class="img-responsive">
+				<img src="magimgs/Step4.1 SampleCleaning.png" class="img-responsive">
 				<a href="javascript:navigate(-1)"  style="position: absolute; left: 81.48%; top: 36.33%; width: 9.45%; height: 1.95%; z-index: 2;"></a>
 			</li>
-			<li>
+			<li> <!-- Tools tab-->
 				<h6>Run sample cleaning</h6>
-				<img src="magimgs/Step4.1 SampleCleaning.png" class="img-responsive">
+				<img src="magimgs/Step4.15 SampleCleaning.png" class="img-responsive">
 				<a href="javascript:navigate(-1)"  style="position:  absolute; left: 25%; top: 2.44%; width: 4.69%; height: 2.44%; z-index: 2;"></a>
 			</li>			
-			<li>
+			<li> <!-- Run sample cleaning-->
 				<h6>Run sample cleaning</h6>
 				<img src="magimgs/Step4.2 SampleCleaning.png" class="img-responsive">
 				<a href="javascript:navigate(-1)"  style="position: absolute; left: 26.09%; top: 21.58%; width: 31.09%; height: 2.44%; z-index: 2;"></a>
 			</li>
-			<li>
+			<li> <!-- X out of window -->
 				<h6>Run sample cleaning</h6>
 				<img src="magimgs/Step4.3 SampleCleaning.png" class="img-responsive">
-				<a href="javascript:navigate(-1)"  style="position: absolute; left: 36.17%; top: 59.18%; width: 7.42%; height: 2.44%; z-index: 2;"></a>
+				<a href="javascript:navigate(-1)"  style="position: absolute; left: 67.6%; top: 24.71%; width: 2.08%; height: 2.6%; z-index: 2;"></a>
+			</li>
+			<li> <!-- Z=0 -->
+				<h6>Move to Z=0</h6>
+				<img src="magimgs/Step4.15 SampleCleaning.png" class="img-responsive">
+				<a href="javascript:navigate(-1)"  style="position: absolute; left: 86.46%; top: 21.61%; width: 6.48%; height: 2.25%; z-index: 2;"></a>
 			</li>
 			<!--Adjust sample height -->
-			<li id="moveimg">
+			<li id="moveimg"> <!-- Center on feature -->
 				<h6>Adjust sample height. Center stage (or center on feature of interest)</h6>
-				<img src="magimgs/Step5 Sample height.png"   class="img-responsive">
-				<a href="javascript:navigate(-1)"  style="position: absolute; left: 86.4%; top: 16.5%; width: 6.48%; height: 2.25%; z-index: 2;"></a>
+				<img src="magimgs/Step4.1 SampleCleaning.png"   class="img-responsive">
+				<a href="javascript:navigate(-1)"  style="position: absolute; left: 13.96%; top: 66.58%; width: 15%; height: 15%; z-index: 2;"></a>
 			</li>
 			<li>
 				<h6>Raise stage to 4mm (by using the scroll button click)</h6>
@@ -239,7 +256,35 @@
 			</li>
 			<!-- Imaging -->
 			<li id="proceedimg">
-				<h6>Proceed with your experiment. When done, go through the shutdown procedure. Turn the beam off</h6>
+				<h6>Proceed with your experiment.</h6>
+				<img src="magimgs/Step6.51 LinkZ.png"   class="img-responsive">
+				<a href="javascript:navigate(-1)"  style="position: absolute; left: 81.5%; top: 17.7%; width: 5.56%; height: 2.72%; z-index: 2;"></a>
+			<li id="proceedimg_lensalign">
+				<h6>If needed, check lens alignment</h6>
+				<video width=635px height=500px controls muted preload="auto" onclick="this.play()">
+					  <source src="magimgs/ImageLensMod.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				<a href="javascript:navigate(-1)" style="position: absolute; left: 85%; top: 5%; width: 10%; height: 5%; z-index: 2;">Continue
+				</a>
+			<li id="proceedimg_stigcent">
+				<h6>If needed, check stigmator centering</h6>
+				<video width=635px height=500px controls muted preload="auto" onclick="this.play()">
+					  <source src="magimgs/ImageStigCenter.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				<a href="javascript:navigate(-1)" style="position: absolute; left: 85%; top: 5%; width: 10%; height: 5%; z-index: 2;">Continue
+				</a>
+			<li id="proceedimg_focusstig">
+				<h6>If needed, check focus and stigmation</h6>
+				<video width=635px height=500px controls muted preload="auto" onclick="this.play()">
+					  <source src="magimgs/ImageFocusStig.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				<a href="javascript:navigate(-1)" style="position: absolute; left: 85%; top: 5%; width: 10%; height: 5%; z-index: 2;">Continue
+				</a>
+			<li id="proceedimg">
+				<h6>When done, go through the shutdown procedure. Turn the beam off</h6>
 				<img src="magimgs/Step6.51 LinkZ.png"   class="img-responsive">
 				<a href="javascript:navigate(-1)"  style="position: absolute; left: 81.5%; top: 17.7%; width: 5.56%; height: 2.72%; z-index: 2;"></a>
 			<!-- Shutdown -->
